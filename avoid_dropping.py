@@ -14,12 +14,14 @@ pygame.display.set_caption("make_my_game")  # 게임이름
 clock = pygame.time.Clock()
 
 # 배경 이미지 불러오기
-background = pygame.image.load(
-    "C:\\Users\\littl\\OneDrive\\바탕 화면\\python\\pygame_basic\\background1.png")
+current_path = os.path.dirname(__file__)  # 현재 파일 위치 반환
+image_path = os.path.join(current_path, "images")
+
+background = pygame.image.load(os.path.join(image_path, "background1.png"))
 
 # 캐릭터(스프라이트) 불러오기
 character = pygame.image.load(
-    "C:\\Users\\littl\\OneDrive\\바탕 화면\\python\\pygame_basic\\dog2.png")
+    os.path.join(image_path, "dog2.png"))
 character_size = character.get_rect().size  # 캐릭터 사이즈 가져오기
 character_width = character_size[0]  # 캐릭터 가로크기
 character_height = character_size[1]  # 캐릭터 세로크기
@@ -35,7 +37,7 @@ character_speed = 1
 
 # 적 enemy 캐릭터
 enemy = pygame.image.load(
-    "C:\\Users\\littl\\OneDrive\\바탕 화면\\python\\pygame_basic\\bone.png")
+    os.path.join(image_path, "bone.png"))
 enemy_size = enemy.get_rect().size  # 캐릭터 사이즈 가져오기
 enemy_width = enemy_size[0]  # 캐릭터 가로크기
 enemy_height = enemy_size[1]  # 캐릭터 세로크기
@@ -45,7 +47,7 @@ enemy_speed = 1
 
 # 적 enemy2 캐릭터
 enemy2 = pygame.image.load(
-    "C:\\Users\\littl\\OneDrive\\바탕 화면\\python\\pygame_basic\\bone.png")
+    os.path.join(image_path, "bone.png"))
 enemy2_size = enemy2.get_rect().size  # 캐릭터 사이즈 가져오기
 enemy2_width = enemy2_size[0]  # 캐릭터 가로크기
 enemy2_height = enemy2_size[1]  # 캐릭터 세로크기
